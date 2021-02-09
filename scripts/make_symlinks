@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+THIS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+DIR_WD="${THIS_DIR}/.."
+DIR_PACKAGE="yolov5"
+
+pushd ${DIR_WD}
+mkdir -p ${DIR_PACKAGE}
+ln -s `realpath models` ${DIR_PACKAGE}/models
+ln -s `realpath utils` ${DIR_PACKAGE}/utils
+touch ${DIR_PACKAGE}/__init__.py
+popd
